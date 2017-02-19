@@ -15,3 +15,12 @@
     @mixin-content;
   }
 }
+
+@define-mixin clearfix {
+  /* Making some fake content */
+  &::after {
+    content: '';
+    clear: both;
+    display: table;
+  }
+}
