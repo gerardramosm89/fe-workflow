@@ -17,9 +17,8 @@
 }
 
 @define-mixin clearfix {
-  /* Making some fake content */
   &::after {
-    content: '';
+    content: "";
     clear: both;
     display: table;
   }
