@@ -71,17 +71,29 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-class Person {
-  constructor (fullName, favColor){
-    this.name = fullName;
-    this.favoriteColor = favColor;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
+
+
+class MobileMenu {
+  constructor() {
+    this.siteHeader = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(".site-header");
+    this.menuIcon = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(".site-header__menu-icon");
+    this.menuContent = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(".site-header__menu-content");
+    this.events();
   }
-  greet() {
-    console.log("Hi there, my name is " + this.name + " and my favorite color is " + this.favoriteColor + ".");
+
+  events() {
+    this.menuIcon.click(this.toggleTheMenu.bind(this));
+  }
+
+  toggleTheMenu() {
+    this.menuContent.toggleClass("site-header__menu-content--is-visible");
+    this.siteHeader.toggleClass("site-header--is-expanded");
   }
 }
 
-/* harmony default export */ __webpack_exports__["a"] = Person;
+/* harmony default export */ __webpack_exports__["a"] = MobileMenu;
 
 
 /***/ }),
@@ -9911,26 +9923,10 @@ return jQuery;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modules_Person__ = __webpack_require__(0);
-var $ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modules_MobileMenu__ = __webpack_require__(0);
 
 
-class Adult extends __WEBPACK_IMPORTED_MODULE_0__modules_Person__["a" /* default */] {
-  payTaxes() {
-    console.log(this.name + " now owes $0 in taxes.");
-  }
-}
-
-console.log("ABC 321");
-
-var john = new __WEBPACK_IMPORTED_MODULE_0__modules_Person__["a" /* default */]("John Doe", "blue");
-john.greet();
-
-var jane = new Adult("Jane Smith", "orange");
-jane.greet();
-jane.payTaxes();
-
-$("h1").remove();
+var mobileMenu = new __WEBPACK_IMPORTED_MODULE_0__modules_MobileMenu__["a" /* default */]();
 
 
 /***/ })
