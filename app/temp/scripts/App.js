@@ -68,17 +68,20 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-function Person(fullName, favColor) {
-  this.name = fullName;
-  this.favoriteColor = favColor;
-  this.greet = function() {
-    console.log("Hello, my name is " + this.name + " and my favorite color is " + this.favoriteColor + ".");
+"use strict";
+class Person {
+  constructor (fullName, favColor){
+    this.name = fullName;
+    this.favoriteColor = favColor;
+  }
+  greet() {
+    console.log("Hi there, my name is " + this.name + " and my favorite color is " + this.favoriteColor + ".");
   }
 }
 
-module.exports = Person;
+/* harmony default export */ __webpack_exports__["a"] = Person;
 
 
 /***/ }),
@@ -9904,18 +9907,30 @@ return jQuery;
 
 /***/ }),
 /* 2 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modules_Person__ = __webpack_require__(0);
 var $ = __webpack_require__(1);
-var Person = __webpack_require__(0);
 
-console.log("Thisdsfbygjhghgdsdsffdsfhjk automation");
 
-var john = new Person("John Doe", "blue");
+class Adult extends __WEBPACK_IMPORTED_MODULE_0__modules_Person__["a" /* default */] {
+  payTaxes() {
+    console.log(this.name + " now owes $0 in taxes.");
+  }
+}
+
+console.log("ABC 321");
+
+var john = new __WEBPACK_IMPORTED_MODULE_0__modules_Person__["a" /* default */]("John Doe", "blue");
 john.greet();
 
-var jane = new Person("Jane Smith", "green");
+var jane = new Adult("Jane Smith", "orange");
 jane.greet();
+jane.payTaxes();
+
+$("h1").remove();
 
 
 /***/ })
